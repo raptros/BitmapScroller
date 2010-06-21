@@ -1,0 +1,43 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BitmapScroller	src/com/flashartofwar/BitmapScroller.as	/^        public function BitmapScroller(bitmapData:BitmapData = null, pixelSnapping:String = "auto", smoothing:Boolean = false)$/;"	f
+BitmapScrollerApp	src/BitmapScrollerApp.as	/^        public function BitmapScrollerApp()$/;"	f
+EaseScrollBehavior	src/com/flashartofwar/behaviors/EaseScrollBehavior.as	/^    public function EaseScrollBehavior(target:Object, targetX:Number = 0) {$/;"	f
+Slider	src/com/bit101/components/Slider.as	/^                public function Slider(orientation:String = Slider.HORIZONTAL, parent:DisplayObjectContainer = null, xpos:Number = 0, ypos:Number =  0, defaultHandler:Function = null)$/;"	f
+Stats	src/net/hires/debug/Stats.as	/^    public function Stats(_theme:Object = null):void$/;"	f
+activateLoop	src/BitmapScrollerApp.as	/^        private function activateLoop():void$/;"	f
+calculateScrollX	src/com/flashartofwar/behaviors/EaseScrollBehavior.as	/^    public function calculateScrollX():void$/;"	f
+clear	src/com/flashartofwar/BitmapScroller.as	/^        public function clear():void$/;"	f
+configureStage	src/BitmapScrollerApp.as	/^        private function configureStage():void$/;"	f
+createBitmapScroller	src/BitmapScrollerApp.as	/^        private function createBitmapScroller():void$/;"	f
+createEaseScrollBehavior	src/BitmapScrollerApp.as	/^        private function createEaseScrollBehavior():void$/;"	f
+createScrubber	src/BitmapScrollerApp.as	/^        private function createScrubber():void$/;"	f
+createStats	src/BitmapScrollerApp.as	/^        private function createStats():void$/;"	f
+destroy	src/net/hires/debug/Stats.as	/^    private function destroy(e:Event):void$/;"	f
+easeNone	src/com/flashartofwar/behaviors/EaseScrollBehavior.as	/^    public static function easeNone (t:Number, b:Number, c:Number, d:Number):Number {$/;"	f
+fingerTouch	src/BitmapScrollerApp.as	/^        private function fingerTouch():void$/;"	f
+hex2css	src/net/hires/debug/Stats.as	/^    private function hex2css(color:int):String$/;"	f
+init	src/net/hires/debug/Stats.as	/^    private function init(e:Event):void$/;"	f
+loadNext	src/BitmapScrollerApp.as	/^        private function loadNext():void$/;"	f
+loop	src/BitmapScrollerApp.as	/^        public function loop():void$/;"	f
+onClick	src/net/hires/debug/Stats.as	/^    private function onClick(e:MouseEvent):void$/;"	f
+onEnterFrame	src/BitmapScrollerApp.as	/^        private function onEnterFrame(event:Event):void$/;"	f
+onError	src/BitmapScrollerApp.as	/^        private function onError(event:*):void$/;"	f
+onLoad	src/BitmapScrollerApp.as	/^        private function onLoad(event:Event):void$/;"	f
+onMouseDown	src/BitmapScrollerApp.as	/^        private function onMouseDown(event:MouseEvent):void$/;"	f
+onMouseMove	src/BitmapScrollerApp.as	/^        private function onMouseMove(event:MouseEvent):void$/;"	f
+onMouseUp	src/BitmapScrollerApp.as	/^        private function onMouseUp(event:MouseEvent):void$/;"	f
+onStageResize	src/BitmapScrollerApp.as	/^        private function onStageResize(event:Event = null):void$/;"	f
+protected.bg	src/net/hires/debug/Stats.as	/^    protected var theme:Object = { bg: 0x000033, fps: 0xffff00, ms: 0x00ff00, mem: 0x00ffff, memmax: 0xff0070 };$/;"	p
+protected.fps	src/net/hires/debug/Stats.as	/^    protected var theme:Object = { bg: 0x000033, fps: 0xffff00, ms: 0x00ff00, mem: 0x00ffff, memmax: 0xff0070 };$/;"	p
+protected.mem	src/net/hires/debug/Stats.as	/^    protected var theme:Object = { bg: 0x000033, fps: 0xffff00, ms: 0x00ff00, mem: 0x00ffff, memmax: 0xff0070 };$/;"	p
+protected.memmax	src/net/hires/debug/Stats.as	/^    protected var theme:Object = { bg: 0x000033, fps: 0xffff00, ms: 0x00ff00, mem: 0x00ffff, memmax: 0xff0070 };$/;"	p
+protected.ms	src/net/hires/debug/Stats.as	/^    protected var theme:Object = { bg: 0x000033, fps: 0xffff00, ms: 0x00ff00, mem: 0x00ffff, memmax: 0xff0070 };$/;"	p
+quadEaseInOut	src/com/flashartofwar/behaviors/EaseScrollBehavior.as	/^    public static function quadEaseInOut(t:Number, b:Number, c:Number, d:Number):Number$/;"	f
+render	src/com/flashartofwar/BitmapScroller.as	/^        public function render():void$/;"	f
+setSliderParams	src/com/bit101/components/Slider.as	/^                public function setSliderParams(min:Number, max:Number, value:Number):void$/;"	f
+update	src/net/hires/debug/Stats.as	/^    private function update(e:Event):void$/;"	f

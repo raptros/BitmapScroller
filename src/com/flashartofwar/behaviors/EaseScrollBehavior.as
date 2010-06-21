@@ -35,10 +35,11 @@ package com.flashartofwar.behaviors {
             if((target.scrollX == _targetX))
             {
                 time = getTimer();
+                trace("reached end");
             }
             else
             {
-                duration += defaultDuration;
+               duration += defaultDuration;
             }
             _targetX = value;
         }
