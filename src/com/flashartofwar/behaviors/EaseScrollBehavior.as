@@ -32,12 +32,10 @@ package com.flashartofwar.behaviors {
         {
             //t: current time, b: beginning value, c: change in position, d: duration
             var c:Number = targetX - target.scrollX;
-            var t:Number = .25;
-            var d:Number = .8;
             var b:Number = target.scrollX;
-            target.scrollX = quadEaseInOut(t, b, c, d);
+            target.scrollX = quadEaseIn(b, c);
 
-            if(((c ^ (c >> 31)) - (c >> 31)) < .01)
+            if (c < .01 && c > -.01)
             {
                 target.scrollX = targetX;
             }
@@ -55,10 +53,9 @@ package com.flashartofwar.behaviors {
      * @return
      *
      */
-    public static function quadEaseInOut(t:Number, b:Number, c:Number, d:Number):Number
+    public static function quadEaseInt(b:Number, c:Number):Number
     {
-        if ((t /= d / 2) < 1) return c / 2 * t * t + b;
-        return -c / 2 * ((--t) * (t - 2) - 1) + b;
+        return c * 25.0/256.0 + b;
     }
 
     public static function easeNone (t:Number, b:Number, c:Number, d:Number):Number {
