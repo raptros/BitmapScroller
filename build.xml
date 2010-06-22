@@ -16,6 +16,7 @@
     <import file="${includes.loc}/compile-swf.xml" />
     <import file="${includes.loc}/compile-swc.xml" />
     <import file="${includes.loc}/android.xml" />
+    <import file="${includes.loc}/apparat.xml" />
 
     <target name="usage" depends="misc.usage" description="Prints usage message" />
 
@@ -24,7 +25,18 @@
     <target name="asdoc" depends="asdoc.gen" description="generates ASDoc"/>
 
     <target name="compile" description="Compiles the project as a swf">
-        <runtarget target="compile-swf.compile" />
+        <!--check for compiler flag: normal compile vs apparat compile-->
+        <if>
+            <equals arg1="apparat" arg2="${compile.type}" casesensitive="false" />
+            <then>
+                <runtarget target="compile-swf.setup-bin" />
+                <runtarget target="apparat.compile" />
+            </then>
+
+            <else>
+                <runtarget target="compile-swf.compile" />
+            </else>
+        </if>
     </target>
 
     <target name="full-build" depends="test,compile" description="Runs tests, compiles project, and optionally runs it.">

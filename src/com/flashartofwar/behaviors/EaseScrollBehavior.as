@@ -53,7 +53,7 @@ package com.flashartofwar.behaviors {
      * @return
      *
      */
-    public static function quadEaseInt(b:Number, c:Number):Number
+    public static function quadEaseIn(b:Number, c:Number):Number
     {
         return c * 25.0/256.0 + b;
     }

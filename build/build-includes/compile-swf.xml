@@ -38,10 +38,25 @@
         </replace>
     </target>
 
+
     <!-- Compile Release SWF -->
     <target name="compile" depends="setup-bin">
         <echo>[compile] Compiling SWF</echo>
         <echo>[compile] Using Flex SDK at: ${FLEX_HOME}</echo>
+
+        <if>
+            <equals arg1="debug" arg2="${compile.type}" casesensitive="false"/>
+            <then>
+                <property name="debug.flag" value="-debug=true"/>
+            </then>
+            <elseif>
+                <equals arg1="optimize" arg2="${compile.type}" casesensitive="false"/>
+                <then>
+                    <property name="debug.flag" value="-debug=false"/>
+                    <property name="optimize.flag" value="-optimize=true"/>
+                </then>
+            </elseif>
+        </if>
 
         <java jar="${FLEX_HOME}/lib/mxmlc.jar" dir="${FLEX_HOME}/frameworks" fork="true" failonerror="true">
             <arg value="${main.src.loc}/${project.name}.as"/>
@@ -53,12 +68,14 @@
             <arg value="-library-path+=${lib.loc}"/>
             <arg value="-library-path+=${air.swcs}"/>
             <arg value="-incremental=true"/>
-            <arg value="-debug=true"/>
             <arg value="-verbose-stacktraces=true"/>
             <arg value="-headless-server=true"/>
             <arg value="-use-network=false"/>
             <arg value="-default-frame-rate=31"/>
             <arg value="-define=CONFIG::mobile,${mobile}"/>
+            <!--Compile mode debug vs. optimize-->
+            <arg value="${debug.flag}"/>
+            <arg value="${optimize.flag}"/>
         </java>
 
         <echo>[compile] Debug SWF ${project.name.versioned}.swf created successfully</echo>
