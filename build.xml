@@ -16,7 +16,7 @@
     <import file="${includes.loc}/compile-swf.xml" />
     <import file="${includes.loc}/compile-swc.xml" />
     <import file="${includes.loc}/android.xml" />
-    <import file="${includes.loc}/apparat.xml" />
+    <!--<import file="${includes.loc}/apparat.xml" />-->
 
     <target name="usage" depends="misc.usage" description="Prints usage message" />
 
