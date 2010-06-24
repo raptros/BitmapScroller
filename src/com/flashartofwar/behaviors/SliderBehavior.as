@@ -52,6 +52,9 @@ package com.flashartofwar.behaviors
         protected var _orientation:String;
         protected var _tick:Number = 1;
 
+        protected var _numTics:Number = 62.0; //total width of images / 480, rounded up.
+
+
 
         public function SliderBehavior(target:Sprite)
         {
@@ -88,6 +91,14 @@ package com.flashartofwar.behaviors
                 track.removeEventListener(MouseEvent.MOUSE_DOWN, onBackClick);
             }
         }
+
+        /**
+         * Find position of nearest tick
+         */
+         protected function nearestTick(tl:Number, nt:Number, rp:Number):Number
+         {
+            return (tl/nt)*Math.round(nt*rp/tl);
+         }
 
         /**
          * Adjusts value to be within minimum and maximum.
@@ -139,6 +150,8 @@ package com.flashartofwar.behaviors
                 dragger.x = target.mouseX - dragger.width / 2;
                 dragger.x = Math.max(dragger.x, 0);
                 dragger.x = Math.min(dragger.x, track.width - dragger.width);
+                //this next line has a hilarious effect.
+                dragger.x = nearestTick(track.width - dragger.width, _numTics, dragger.x);
                 _value = dragger.x / (track.width - dragger.width) * (_max - _min) + _min;
             }
             else
@@ -178,6 +191,21 @@ package com.flashartofwar.behaviors
         {
             target.stage.removeEventListener(MouseEvent.MOUSE_UP, onDrop);
             target.stage.removeEventListener(MouseEvent.MOUSE_MOVE, onSlide);
+            var oldValue:Number = _value;
+            if (_orientation == HORIZONTAL)
+            {
+                //this next line has a hilarious effect.
+                dragger.x = nearestTick(track.width - dragger.width, _numTics, dragger.x);
+                _value = dragger.x / (track.width - dragger.width) * (_max - _min) + _min;
+            }
+            else
+            {
+               // _value = (track.height - dragger.height - dragger.y) / (track.height - dragger.height) * (_max - _min) + _min;
+            }
+            if (_value != oldValue)
+            {
+                dispatchEvent(new Event(Event.CHANGE));
+            }
             target.stopDrag();
         }
 
